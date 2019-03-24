@@ -7,6 +7,7 @@ import { RoomsComponent } from './components/rooms/rooms.component';
 import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { AvailableComponent } from './components/available/available.component';
+import { RoomComponent } from './components/room/room.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AvailableComponent } from './components/available/available.component';
     RoomsComponent,
     HomeComponent,
     PagenotfoundComponent,
-    AvailableComponent
+    AvailableComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { AvailableComponent } from './components/available/available.component';
       {
         path: 'rooms',
         component: RoomsComponent
+      },
+      {
+        path: 'available/:id',
+        component: RoomComponent
       },
       {
         path: 'available',

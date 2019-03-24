@@ -4,6 +4,6 @@
     <p>Room number: {{item.roomnum}}</p>
     <p>No. of beds: {{item.nobeds}}</p>
     <p>${{item.price}}</p>
-    <a [href]="room/item.roomnum">See detail</a>
+    <a [routerLink]="item.roomnum">See detail</a>
   </div>
 </div>

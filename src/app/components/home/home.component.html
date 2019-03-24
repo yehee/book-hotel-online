@@ -6,22 +6,5 @@
 </div>
 <div *ngIf="error">{{error}}</div>
 <div *ngIf="success">{{success}}</div>
-    
-<div id="theList">
-  <h2>The list</h2>
-  <a routerLink="/rooms">Route to search</a>
-  <table>
-    <tr>
-      <th>Phone number</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Profile</th>
-    </tr>
-    <tr *ngFor="let item of rooms">
-      <td>{{item.pnumber}}</td>
-      <td>{{item.fname}}</td>
-      <td>{{item.lname}}</td>
-      <td><img src="../../assets/filler.jpg" height="100"></td>
-    </tr>
-  </table>
-</div>
+
+<h3><a routerLink="/rooms">Browse available rooms</a></h3>
