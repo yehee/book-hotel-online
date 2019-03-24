@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { AvailableComponent } from './components/available/available.component';
 import { RoomComponent } from './components/room/room.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RoomComponent } from './components/room/room.component';
     HomeComponent,
     PagenotfoundComponent,
     AvailableComponent,
-    RoomComponent
+    RoomComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,10 @@ import { RoomComponent } from './components/room/room.component';
       {
         path: 'available',
         component: AvailableComponent
+      },
+      {
+        path: 'confirmation',
+        component: ConfirmationComponent
       },
       {
         path: '**',
