@@ -54,7 +54,7 @@ CREATE TABLE pays (
 );
 CREATE TABLE reservations (
   rid int(11) PRIMARY KEY,
-  phonenum varchar(10) DEFAULT NULL,
+  phonenum varchar(10) NOT NULL,
   checkOutDate date DEFAULT NULL,
   checkInDate date DEFAULT NULL,
   FOREIGN KEY (phonenum) REFERENCES customers (phonenum) ON DELETE CASCADE ON UPDATE CASCADE
@@ -66,10 +66,8 @@ CREATE TABLE services (
 );
 CREATE TABLE stays (
   roomnum int(11) PRIMARY KEY,
-  --nobeds int(11) DEFAULT NULL,
-  --cleanliness int(11) DEFAULT NULL,
-  --price float DEFAULT NULL,
   phonenum varchar(10) NOT NULL,
+  FOREIGN KEY (roomnum) REFERENCES vacancy (roomnum) ON DELETE CASCADE,
   FOREIGN KEY (phonenum) REFERENCES customers (phonenum) ON DELETE CASCADE
 );
 CREATE TABLE transactions (
