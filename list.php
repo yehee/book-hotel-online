@@ -3,19 +3,19 @@
  * Returns the list of cars.
  */
 
-require 'connect.php';
+require '../connect.php';
     
 $rooms = [];
-$sql = "SELECT roomnumber, price FROM vacant_room";
-$con = openCon();
+$sql = "SELECT pnumber, fname, lname FROM customers";
+$con = connect();
 
-if($result = mysqli_query($con, $sql))
-{
+if ($result = mysqli_query($con, $sql)) {
   $cr = 0;
   while($row = mysqli_fetch_assoc($result))
   {
-    $rooms[$cr]['roomnumber'] = $row['roomnumber'];
-    $rooms[$cr]['price']      = $row['price'];
+    $rooms[$cr]['pnumber'] = $row['pnumber'];
+    $rooms[$cr]['fname']   = $row['fname'];
+    $rooms[$cr]['lname']   = $row['lname'];
     $cr++;
   }
     
@@ -25,4 +25,4 @@ else
 {
   http_response_code(404);
 }
-CloseCon($con);
+close($con);
