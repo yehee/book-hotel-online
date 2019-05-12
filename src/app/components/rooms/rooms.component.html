@@ -1,4 +1,4 @@
-<form (submit)="getRooms($event)" style="display:inline-block;min-width:300px;margin:10px;padding:10px;box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);">
+<!-- <form (submit)="getRooms($event)" style="display:inline-block;min-width:300px;margin:10px;padding:10px;box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);">
   <div class="container">
     <div>
       <input type="date" autocomplete="off" id="check-in">
@@ -7,4 +7,21 @@
       <button type="submit" id="submit">Submit</button>
     </div>
   </div>
-</form>
+</form> -->
+<div class="row justify-content-md-center">
+  <form (submit)="getRooms($event)" class="col-md-3 col-md-offset-3">
+    <div class="form-group">
+      <label for="check-in">Check-in Date</label>
+      <input type="date" class="form-control" autocomplete="off" id="check-in">
+    </div>
+    <div class="form-group">
+      <label for="check-out">Check-out Date</label>
+      <input type="date" class="form-control" autocomplete="off" id="check-out">
+    </div>
+    <div class="form-group">
+      <label for="member">Personnel</label>
+      <input type="number" class="form-control" autocomplete="off" min=0 max=10 id="member">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

@@ -9,6 +9,7 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { AvailableComponent } from './components/available/available.component';
 import { RoomComponent } from './components/room/room.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     PagenotfoundComponent,
     AvailableComponent,
     RoomComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

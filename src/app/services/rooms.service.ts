@@ -11,7 +11,7 @@ interface myData {
   providedIn: 'root'
 })
 export class RoomsService {
-  baseUrl = 'http://localhost/hotel';
+  baseUrl = 'http://localhost/hotel/api';
   rooms: Room[];
 
   constructor(private http: HttpClient) {}
