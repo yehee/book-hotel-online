@@ -10,6 +10,7 @@ import { AvailableComponent } from './components/available/available.component';
 import { RoomComponent } from './components/room/room.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
     RouterModule.forRoot([
       {
         path: '',

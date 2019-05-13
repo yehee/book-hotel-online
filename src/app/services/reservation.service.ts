@@ -10,7 +10,7 @@ interface myData {
   providedIn: 'root'
 })
 export class ReservationService {
-  baseUrl = 'http://localhost/hotel';
+  baseUrl = 'http://localhost/home/api';
 
   constructor(private http: HttpClient) { }
 
