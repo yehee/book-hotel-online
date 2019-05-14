@@ -33,13 +33,13 @@
         <a class="nav-link" routerLink="/view-reservations">View Reservation</a>
       </li>
       <div class="dropdown">
-          <img (click)="isActive = !isActive" src="../../assets/norway.jpg" id="profile" class="ml-3">
+          <img (click)="isActive = !isActive" src="../../assets/IMG_2795.JPG" id="profile" class="ml-3" style="object-fit: cover; object-position: top">
           <div class="dropdown-menu dropdown-menu-right" [ngClass]="{'d-block': isActive}">
-            <a class="dropdown-item" href="#">View profile</a>
-            <a class="dropdown-item" href="#">My reservations</a>
-            <a class="dropdown-item" href="#">Payment history</a>
+            <a (click)="isActive = !isActive" class="dropdown-item" routerLink="/user">View profile</a>
+            <a (click)="isActive = !isActive" class="dropdown-item" href="#">My reservations</a>
+            <a (click)="isActive = !isActive" class="dropdown-item" href="#">Payment history</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Log out</a>
+            <a (click)="isActive = !isActive" class="dropdown-item" href="#">Log out</a>
           </div>
         </div>
     </ul>

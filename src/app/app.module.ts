@@ -11,6 +11,8 @@ import { RoomComponent } from './components/room/room.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AvailableComponent,
     RoomComponent,
     ConfirmationComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
       {
         path: 'rooms',
         component: RoomsComponent
+      },
+      {
+        path: 'user',
+        component: ProfileComponent
       },
       {
         path: 'available/:id',
