@@ -6,8 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  rooms = [];
 
-  constructor() { }
+  constructor() {
+    this.rooms = [
+    {
+      roomnum: 305,
+      nobeds: 3,
+      price: 175
+    },
+    {
+      roomnum: 305,
+      nobeds: 3,
+      price: 175
+    },
+    {
+      roomnum: 305,
+      nobeds: 3,
+      price: 175
+    },
+    {
+      roomnum: 305,
+      nobeds: 3,
+      price: 175
+    }]
+  }
 
   ngOnInit() {
   }

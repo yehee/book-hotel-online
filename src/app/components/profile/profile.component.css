@@ -5,3 +5,6 @@ h2 {
 li {
     width: 200px;
 }
+.w-25.h-25 p {
+    margin:0;
+}

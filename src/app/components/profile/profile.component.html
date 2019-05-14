@@ -16,10 +16,19 @@
     <div class="col-8">
       <div class="row" style="padding: 50px 0 0 50px;">
         <h2>You liked</h2>
+        <div class="row">
+          <div *ngFor="let room of rooms" class="w-25 h-25 p-2">
+            <img src="../../../assets/norway.jpg" class="img-thumbnail p-0 border-0">
+            <p>Room number: {{room.roomnum}}</p>
+            <p>No. of beds: {{room.nobeds}}</p>
+            <p class="font-weight-bold">${{room.price}}</p>
+            <a [routerLink]="room.roomnum">See detail</a>
+          </div>
+        </div>
       </div>
       <div class="row" style="padding-left: 50px;">
         <h2>Payment method</h2>
-        <div id="Content_divCardCarousel" class="card-carousel col-sm-8">
+        <div id="Content_divCardCarousel" class="card-carousel">
           <div class="carousel-wrapper" style="display: block;">
             <ul style="list-style: none;
             padding: 0;
