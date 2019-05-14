@@ -12,19 +12,159 @@
   <div class="row" style="height:100px;box-shadow: 2px 2px 10px 0.3px rgba(0,0,0,0.1);">
     <!-- <h3 class="p-5">Alice Kim</h3> -->
   </div>
-  <div class="row" style="padding: 50px 0 0 50px;">
-    <h2>You liked</h2>
-  </div>
-  <div class="row" style="padding-left: 50px;">
-    <h2>Payment method</h2>
-  </div>
-  <div class="row" style="padding-left: 50px;">
-    <h2>Profile info</h2>
-  </div>
-  <div class="row" style="padding-left: 50px;">
-    <h2>My reservations</h2>
-  </div>
-  <div class="row" style="padding-left: 50px;">
-    <h2>Payment history</h2>
+  <div class="row">
+    <div class="col-8">
+      <div class="row" style="padding: 50px 0 0 50px;">
+        <h2>You liked</h2>
+      </div>
+      <div class="row" style="padding-left: 50px;">
+        <h2>Payment method</h2>
+        <div id="Content_divCardCarousel" class="card-carousel col-sm-8">
+          <div class="carousel-wrapper" style="display: block;">
+            <ul style="list-style: none;
+            padding: 0;
+            display: flex;margin:0">
+              <li class="add-card-list">
+                  <a id="Content_rptCards_lnkAddCard" href="#">
+                    <img alt="Card 01640278849789797120" src="../../../assets/creditcard.png" width="100px" style="filter: grayscale(100%);">
+                    <p class="add-card-text">Add card</p>
+                  </a>
+              </li>
+              <li class="active">
+                  <a id="Content_rptCards_btnSelectCard_0" href="#">
+                    <img alt="Card 01640278849789797120" src="../../../assets/creditcard.png" width="100px">
+                    <p>Adult - 7120</p>
+                  </a>
+              </li>
+              <li>
+                  <a id="Content_rptCards_btnSelectCard_1" href="#">
+                    <img alt="Card 01641292632637576965" src="../../../assets/creditcard.png" width="100px">
+                    <p>Concession - 6965</p>
+                  </a>
+              </li>
+            </ul>
+          </div>
+          <!-- <div id="carouselControl">
+              <button class="slider" data-direction="left" style="height: 124px;"><p class="arrow-left">Slide Left</p></button>
+              <button class="slider" data-direction="right" style="height: 124px; display: none;"><p class="arrow-right">Slide Right</p></button>
+          </div>
+          <div id="carouselLoading" style="display: none;">
+              <div></div>
+          </div> -->
+        </div>
+      </div>
+      <div class="row" style="padding-left: 50px;">
+        <h2>Profile info</h2>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Save change</button>
+        </form>
+      </div>
+      <div class="row" style="padding-left: 50px;">
+        <h2>My reservations</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row" style="padding-left: 50px;">
+        <h2>Payment history</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-4">
+      <div style="padding:20px;margin:50px 20px;background:lightpink; height:300px">
+        <p style="display:block;position:relative;top: calc(50% - 20px);text-align:center">Calendar should be here!</p>
+      </div>
+    </div>
   </div>
 </div>
