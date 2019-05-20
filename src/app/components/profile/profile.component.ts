@@ -10,10 +10,12 @@ export class ProfileComponent implements OnInit {
   phone = '7789887498';
   liked = [];
   creditcards = [];
-  // rooms = [];
+  reservations = [];
 
   constructor(private profileService: ProfileService) {
     this.liked = localStorage.getItem('liked') == null ? [] : JSON.parse(localStorage.getItem('liked'));
+    this.creditcards = localStorage.getItem('creditcards') == null ? [] : JSON.parse(localStorage.getItem('creditcards'));
+    this.reservations = localStorage.getItem('reservations') == null ? [] : JSON.parse(localStorage.getItem('reservations'));
   }
 
   ngOnInit() {
@@ -36,6 +38,18 @@ export class ProfileComponent implements OnInit {
         console.log(this.creditcards);
         localStorage.removeItem('creditcards');
         localStorage.setItem('creditcards', JSON.stringify(this.creditcards));
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+    this.profileService.getReservation(this.phone).subscribe(
+      (res: any[]) => {
+        console.log(res);
+        this.reservations = res['data'];
+        console.log(this.reservations);
+        localStorage.removeItem('reservations');
+        localStorage.setItem('reservations', JSON.stringify(this.reservations));
       },
       (err) => {
         console.error(err);

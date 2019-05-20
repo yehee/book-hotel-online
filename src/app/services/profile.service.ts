@@ -22,7 +22,7 @@ export class ProfileService {
   }
 
   getReservation(params) {
-    return this.http.post<any[]>(`${this.baseUrl}/my-reservation`, { params });
+    return this.http.post<any[]>(`${this.baseUrl}/my-reservations`, { params });
   }
 
   getPaymentHistory(params) {
