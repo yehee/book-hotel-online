@@ -17,7 +17,7 @@
       <div class="row" style="padding: 50px 0 0 50px;">
         <h2>You liked</h2>
         <div class="row">
-          <div *ngFor="let room of rooms" class="w-25 h-25 p-2">
+          <div *ngFor="let room of liked" class="w-25 h-25 p-2">
             <img src="../../../assets/norway.jpg" class="img-thumbnail p-0 border-0">
             <p>Room number: {{room.roomnum}}</p>
             <p>No. of beds: {{room.nobeds}}</p>
@@ -30,26 +30,18 @@
         <h2>Payment method</h2>
         <div id="Content_divCardCarousel" class="card-carousel">
           <div class="carousel-wrapper" style="display: block;">
-            <ul style="list-style: none;
-            padding: 0;
-            display: flex;margin:0">
-              <li class="add-card-list">
-                  <a id="Content_rptCards_lnkAddCard" href="#">
-                    <img alt="Card 01640278849789797120" src="../../../assets/creditcard.png" width="100px" style="filter: grayscale(100%);">
-                    <p class="add-card-text">Add card</p>
-                  </a>
-              </li>
-              <li class="active">
-                  <a id="Content_rptCards_btnSelectCard_0" href="#">
-                    <img alt="Card 01640278849789797120" src="../../../assets/creditcard.png" width="100px">
-                    <p>Adult - 7120</p>
-                  </a>
-              </li>
+            <ul style="list-style: none; padding: 0; display: flex; margin: 0;">
               <li>
-                  <a id="Content_rptCards_btnSelectCard_1" href="#">
-                    <img alt="Card 01641292632637576965" src="../../../assets/creditcard.png" width="100px">
-                    <p>Concession - 6965</p>
-                  </a>
+                <a href="/creditcards/add">
+                  <img alt="Add Card" src="../../../assets/creditcard.png" width="100px" style="filter: grayscale(100%);">
+                  <p>Add Card</p>
+                </a>
+              </li>
+              <li *ngFor="let creditcard of creditcards">
+                <a id="Content_rptCards_lnkAddCard" href="#">
+                  <img alt="Card {{creditcard.cardnumber}}" src="../../../assets/creditcard.png" width="100px">
+                  <p>{{creditcard.name}} - {{creditcard.type}}</p>
+                </a>
               </li>
             </ul>
           </div>

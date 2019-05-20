@@ -56,7 +56,7 @@ export class RoomComponent implements OnInit {
           data: data
         }
       };
-      console.log(data)
+      console.log(data);
       this.router.navigate(['confirmation'], ne);
     });
   }
