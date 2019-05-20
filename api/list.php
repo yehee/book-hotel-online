@@ -3,7 +3,7 @@
  * Returns the list of cars.
  */
 
-require '../connect.php';
+require 'connect.php';
     
 $rooms = [];
 $sql = "SELECT pnumber, fname, lname FROM customers";
