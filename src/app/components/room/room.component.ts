@@ -16,7 +16,7 @@ export class RoomComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get("id")
+    this.id = this.route.snapshot.paramMap.get("id");
     this.getRoom(this.id);
   }
 
@@ -24,6 +24,7 @@ export class RoomComponent implements OnInit {
     console.log(id)
     this.roomService.getRoom(id).subscribe(
       (res: any[]) => {
+        console.log(res);
         this.room = res['data'];
         console.log(this.room);
       },
@@ -36,15 +37,18 @@ export class RoomComponent implements OnInit {
   reserve(event): void {
     event.preventDefault(); 
     const target = event.target;
-    const date = target.querySelector('#check-in').value;
+    const checkin = target.querySelector('#checkin').value;
+    const checkout = target.querySelector('#checkout').value;
     const fname = target.querySelector('#fname').value;
     const lname = target.querySelector('#lname').value;
-    const phonenum = target.querySelector('#phonenum').value;
+    const phone = target.querySelector('#phone').value;
     const param = {
-      date: date,
+      checkin: checkin,
+      checkout: checkout,
       fname: fname,
       lname: lname,
-      phonenum: phonenum
+      phone: phone,
+      room: this.id
     }
     this.reservationService.makeReservation(param).subscribe(data => {
       const ne: NavigationExtras = {

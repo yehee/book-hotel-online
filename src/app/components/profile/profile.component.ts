@@ -11,22 +11,22 @@ export class ProfileComponent implements OnInit {
   constructor() {
     this.rooms = [
     {
-      roomnum: 305,
+      roomnum: 110,
       nobeds: 3,
       price: 175
     },
     {
-      roomnum: 305,
+      roomnum: 110,
       nobeds: 3,
       price: 175
     },
     {
-      roomnum: 305,
+      roomnum: 110,
       nobeds: 3,
       price: 175
     },
     {
-      roomnum: 305,
+      roomnum: 110,
       nobeds: 3,
       price: 175
     }]

@@ -29,7 +29,7 @@
       <p>Room number: {{room.roomnum}}</p>
       <p>No. of beds: {{room.nobeds}}</p>
       <p class="font-weight-bold">${{room.price}}</p>
-      <a [routerLink]="room.roomnum">See detail</a>
+      <a href="/rooms/{{room.roomnum}}">See detail</a>
     </div>
   </div>
 </div>

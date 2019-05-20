@@ -45,7 +45,7 @@ import { ProfileComponent } from './components/profile/profile.component';
         component: ProfileComponent
       },
       {
-        path: 'available/:id',
+        path: 'rooms/:id',
         component: RoomComponent
       },
       {
