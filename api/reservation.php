@@ -2,7 +2,7 @@
 
 require 'connect.php';
 
-$reservation = [];
+$res = [];
 $con = connect();
 
 $_POST = json_decode(file_get_contents('php://input'), true);
@@ -28,8 +28,8 @@ $sql = "SELECT * FROM customers WHERE pnumber='{$phone}'";
 if ($result = mysqli_query($con, $sql)) if(mysqli_num_rows($result) == 0) mysqli_query($con, "INSERT INTO customers VALUES ('{$phone}', '{$fname}', '{$lname}', NULL, NULL)");
 
 $sql = "INSERT INTO reservations VALUES ({$rid}, '{$phone}', '{$checkout->format('Y-m-d')}', '{$checkin->format('Y-m-d')}', '{$room}')";
-if ($result = mysqli_query($con, $sql)) $reservation['rid'] = $rid;
-else $reservation['rid'] = 10001;
+if ($result = mysqli_query($con, $sql)) $res['rid'] = $rid;
+else $res['rid'] = 10001;
 
-echo json_encode(['data'=>$reservation]);
+echo json_encode(['data'=>$res]);
 close($con);

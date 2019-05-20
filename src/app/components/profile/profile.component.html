@@ -96,6 +96,7 @@
               <th scope="col">Room #</th>
               <th scope="col">Check-in Date</th>
               <th scope="col">Check-out Date</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -103,6 +104,7 @@
               <th scope="row">{{reservation.roomnum}}</th>
               <td>{{reservation.checkindate}}</td>
               <td>{{reservation.checkoutdate}}</td>
+              <td><button type="submit" class="btn btn-primary">Change</button></td>
             </tr>
           </tbody>
         </table>
@@ -112,30 +114,16 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Biil #</th>
+              <th scope="col">Amount</th>
+              <th scope="col">See Details</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+            <tr *ngFor="let payment of payments">
+              <th scope="row">{{payment.bid}}</th>
+              <td>{{payment.amount}}</td>
+              <td><button type="submit" class="btn btn-primary">See Details</button></td>
             </tr>
           </tbody>
         </table>
