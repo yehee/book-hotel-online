@@ -1,6 +1,5 @@
 <div class="container">
-  <div class="row" style="height: 300px; background: #fff url('../../../assets/village.jpg');    background-size: cover;
-  background-position: center;">
+  <div class="row" style="height: 300px; background: #fff url('../../../assets/village.jpg');background-size: cover;background-position: center;">
     <!-- <div>
       <img src="../../../assets/norway.jpg" width="200px" height="200px" style="position: relative;top: 150px;left: 150px;">
       <img src="../../../assets/norway.jpg" class="img-fluid">
@@ -88,51 +87,58 @@
           <button type="submit" class="btn btn-primary">Save change</button>
         </form>
       </div>
-      <div class="row" style="padding-left: 50px;">
-        <h2>My reservations</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Room #</th>
-              <th scope="col">Check-in Date</th>
-              <th scope="col">Check-out Date</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let reservation of reservations">
-              <th scope="row">{{reservation.roomnum}}</th>
-              <td>{{reservation.checkindate}}</td>
-              <td>{{reservation.checkoutdate}}</td>
-              <td><button type="submit" class="btn btn-primary">Change</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="row" style="padding-left: 50px;">
-        <h2>Payment history</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Biil #</th>
-              <th scope="col">Amount</th>
-              <th scope="col">See Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let payment of payments">
-              <th scope="row">{{payment.bid}}</th>
-              <td>{{payment.amount}}</td>
-              <td><button type="submit" class="btn btn-primary">See Details</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
     <div class="col-4">
+      <iframe src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FVancouver&amp;src=YWxpY2V5a2ltMDgyOEBnbWFpbC5jb20&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=MXVsaGxhYjIxdDJwZWhrbGQ0NG1ucjRpaGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=a28uY2FuYWRpYW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%237fb1b8&amp;color=%23cc8b96&amp;color=%23B39DDB&amp;color=%2378b66f&amp;showCalendars=1&amp;showPrint=0&amp;showTz=0" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
       <div style="padding:20px;margin:50px 20px;border: 3px solid black; border-radius: 5px; height:300px">
-        <p style="display:block;position:relative;top: calc(50% - 20px);text-align:center">Calendar should be here!</p>
+          <p style="display:block;position:relative;top: calc(50% - 20px);text-align:center">Calendar should be here!</p>
+        </div>
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="row" style="padding-left: 50px;padding-right: 15px;">
+          <h2>My reservations</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Room #</th>
+                <th scope="col">Check-in Date</th>
+                <th scope="col">Check-out Date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let reservation of reservations">
+                <th scope="row">{{reservation.roomnum}}</th>
+                <td>{{reservation.checkindate}}</td>
+                <td>{{reservation.checkoutdate}}</td>
+                <td><button type="submit" class="btn btn-primary">Change</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row" style="padding-left: 15px;padding-right: 50px;">
+          <h2>Payment history</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Biil #</th>
+                <th scope="col">Amount</th>
+                <th scope="col">See Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let payment of payments">
+                <th scope="row">{{payment.bid}}</th>
+                <td>{{payment.amount}}</td>
+                <td><button type="submit" class="btn btn-primary">See Details</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
