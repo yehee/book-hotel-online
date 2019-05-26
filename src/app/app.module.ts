@@ -21,6 +21,9 @@ import { FormsModule } from '@angular/forms';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { PopularComponent } from './components/popular/popular.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -34,10 +37,13 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     FooterComponent,
     ProfileComponent,
-    CalendarComponent
+    CalendarComponent,
+    PopularComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
+    ChartModule,
     HttpClientModule,
     AngularFontAwesomeModule,
     BrowserAnimationsModule,
@@ -54,6 +60,14 @@ import { CommonModule } from '@angular/common';
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'popular',
+        component: PopularComponent
+      },
+      {
+        path: 'analytics',
+        component: AnalyticsComponent
       },
       {
         path: 'rooms',

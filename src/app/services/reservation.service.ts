@@ -10,6 +10,10 @@ export class ReservationService {
   constructor(private http: HttpClient) { }
 
   makeReservation(params) {
-    return this.http.post<any[]>(`${this.baseUrl}/reservation`, { params })
+    return this.http.post<any[]>(`${this.baseUrl}/reservation`, { params });
+  }
+
+  getStatistics() {
+    return this.http.get<any[]>(`${this.baseUrl}/statistics`);
   }
 }

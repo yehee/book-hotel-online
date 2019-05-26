@@ -24,9 +24,7 @@ export class RoomComponent implements OnInit {
     console.log(id)
     this.roomService.getRoom(id).subscribe(
       (res: any[]) => {
-        console.log(res);
         this.room = res['data'];
-        console.log(this.room);
       },
       (err) => {
         console.error(err);

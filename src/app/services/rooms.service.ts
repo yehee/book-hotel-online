@@ -10,6 +10,10 @@ export class RoomsService {
   constructor(private http: HttpClient) {}
 
   getAvailableRooms(date) {
-    return this.http.post<any[]>(`${this.baseUrl}/rooms`, { date })
+    return this.http.post<any[]>(`${this.baseUrl}/available-rooms`, { date });
+  }
+
+  getPopularRooms() {
+    return this.http.get<any[]>(`${this.baseUrl}/popular-rooms`);
   }
 }
