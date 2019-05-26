@@ -7,6 +7,7 @@ import { ReservationService } from 'src/app/services/reservation.service';
   templateUrl: './analytics.component.html',
   styleUrls: ['./analytics.component.css']
 })
+
 export class AnalyticsComponent implements OnInit {
   chart;
 
@@ -59,7 +60,6 @@ export class AnalyticsComponent implements OnInit {
     );
   }
 
-  // add point to chart serie
   add(count) {
     this.chart.addPoint(count);
   }
