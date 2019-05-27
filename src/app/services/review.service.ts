@@ -21,4 +21,8 @@ export class ReviewService {
     return this.http.get<any[]>(`${this.baseUrl}/all`);
   }
 
+  getReviewsPer(params) {
+    return this.http.post<any[]>(`${this.baseUrl}/all`, { params });
+  }
+
 }

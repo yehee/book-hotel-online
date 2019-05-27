@@ -113,16 +113,16 @@
         <div id="Content_divCardCarousel" class="card-carousel">
           <div class="carousel-wrapper" style="display: block;">
             <ul style="list-style: none; padding: 0; display: flex; margin: 0;">
-              <li>
-                <a href="/creditcards/add">
-                  <img alt="Add Card" src="../../../assets/creditcard.png" width="100px" style="filter: grayscale(100%);">
-                  <p>Add Card</p>
-                </a>
-              </li>
               <li *ngFor="let creditcard of creditcards">
                 <a id="Content_rptCards_lnkAddCard" href="#">
                   <img alt="Card {{creditcard.cardnumber}}" src="../../../assets/creditcard.png" width="100px">
                   <p>{{creditcard.name}} - {{creditcard.type}}</p>
+                </a>
+              </li>
+              <li>
+                <a href="/creditcards/add">
+                  <!-- <img alt="Add Card" src="../../../assets/creditcard.png" width="100px" style="filter: grayscale(100%);"> -->
+                  <p>Add Card</p>
                 </a>
               </li>
             </ul>
