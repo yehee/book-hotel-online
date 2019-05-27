@@ -10,7 +10,7 @@ import { ReviewService } from 'src/app/services/review.service';
 })
 
 export class AnalyticsComponent implements OnInit {
-  chart; rating; reviews = [];
+  chart; rating; avg; reviews = [];
 
   constructor(private reservationService : ReservationService, private reviewService : ReviewService) {
     this.chart = new Chart({
@@ -97,6 +97,7 @@ export class AnalyticsComponent implements OnInit {
 
   ngOnInit() {
     this.update();
+    this.getAvg();
     this.getReviews();
   }
 
@@ -116,7 +117,19 @@ export class AnalyticsComponent implements OnInit {
     this.chart.addPoint(count);
   }
 
-  getReviews(): void {
+  getAvg() {
+    this.reviewService.getAvg().subscribe(
+      (res: any[]) => {
+        console.log(res);
+        this.avg = Math.round(res['data'] * 10) / 10;
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
+
+  getReviews() {
     this.reviewService.getReviews().subscribe(
       (res: any[]) => {
         console.log(res);
