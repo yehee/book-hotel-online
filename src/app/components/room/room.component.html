@@ -10,7 +10,7 @@
               <img src="{{ review.imgurl }}" class="img-fluid" style="width:40px;height:40px;border-radius:50%;object-fit: cover;object-position: top;">
             </div>
             <div>
-              <p class="font-weight-bold" style="margin-bottom: 0;">{{ review.fname }} {{ review.lname }}</p>
+              <p class="font-weight-bold" style="margin-bottom: 0;">{{ review.fname }} {{ review.lname }} <a routerLink="/reviews/edit/{{ review.id }}"><i class="fa fa-pencil"></i></a></p>
               <div>
                 <fa *ngIf="review.rating >= 1" name="star" style="color: orange"></fa>
                 <fa *ngIf="review.rating >= 2" name="star" style="color: orange"></fa>
