@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" style="background: url('../../../assets/sweden.jpg');height: 500px;background-position: center;color: white">
+    <h1 style="position: relative;
+    top: calc(50% - 7px);
+    text-align: center;
+    width: 100%;">Europe</h1>
+    <p style="position: relative;
+    top: 25px;
+    text-align: center;
+    width: 100%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  <div class="row">
+    <div *ngFor="let room of rooms" class="w-25 h-25 p-2">
+      <img src="../../../assets/norway.jpg" class="img-thumbnail p-0 border-0">
+      <p>Room number: {{room.room}}</p>
+      <p>Loved by people <span class="font-weight-bold">{{room.counts}}</span> times so far!</p>
+      <a href="/rooms/{{room.room}}">See detail</a>
+    </div>
+    <div class="w-25 h-25 p-2">
+        <!-- <img src="../../../assets/norway.jpg" class="img-thumbnail p-0 border-0"> -->
+        <!-- <p>Room number: {{room.room}}</p>
+        <p>Loved by people <span class="font-weight-bold">{{room.counts}}</span> times so far!</p>
+        <a href="/rooms/{{room.room}}">See detail</a> -->
+      <a routerLink="/available" style="position: relative;
+      top: 130px;
+      text-align: center;
+      width: 100%;
+      display: block;">See more</a>
+    </div>
+  </div>
+</div>

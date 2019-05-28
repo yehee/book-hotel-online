@@ -10,12 +10,13 @@ export class ConfirmationComponent implements OnInit {
   rid = '';
 
   constructor(private router: Router) {
-    const navigation = this.router.getCurrentNavigation();
-    console.log(navigation.extras.state)
-    this.rid = navigation.extras.state ? navigation.extras.state.data.data.rid : this.rid;
+    const state = this.router.getCurrentNavigation().extras.state;
+    this.rid = state ? state.data.data.rid : this.rid;
   }
 
-  ngOnInit() {
+  ngOnInit() { //redirects the page in n seconds
+    setTimeout(() => {
+      this.router.navigate(['']);
+    }, 5000);  //5s
   }
-
 }

@@ -1,9 +1,35 @@
-<div>
-  <h2>A list of available rooms</h2>
-  <div *ngFor="let item of rooms" style="display:inline-block;min-width:calc(33.33% - 20px);margin:10px;padding:10px;box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);">
-    <p>Room number: {{item.roomnum}}</p>
-    <p>No. of beds: {{item.nobeds}}</p>
-    <p>${{item.price}}</p>
-    <a [routerLink]="item.roomnum">See detail</a>
+<div class="container">
+  <h1 class="text-center">A list of available rooms</h1>
+  <form (submit)="getRooms($event)" class="form-inline" >
+    <div class="form-group">
+      <label class="sr-only" for="checkin">Check-in</label>
+      <div class="input-group mr-3">
+        <div class="input-group-addon"><fa name="calendar"></fa></div>
+        <input type="date" class="form-control" id="checkin">
+        <!-- <div class="input-group-addon">.00</div> -->
+      </div>
+      <label class="sr-only" for="checkout">Check-out</label>
+      <div class="input-group mr-3">
+        <div class="input-group-addon"><fa name="calendar"></fa></div>
+        <input type="date" class="form-control" id="checkout">
+        <!-- <div class="input-group-addon">.00</div> -->
+      </div>
+      <label class="sr-only" for="size">Personnel</label>
+      <div class="input-group mr-3">
+        <div class="input-group-addon"><fa name="user"></fa></div>
+        <input type="number" class="form-control" min=0 max=10 id="size">
+        <!-- <div class="input-group-addon">.00</div> -->
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary float-right ml-auto" style="width: 100px;">Apply</button>
+  </form>
+  <div class="row">
+    <div *ngFor="let room of rooms" class="w-25 h-25 p-2">
+      <img src="../../../assets/norway.jpg" class="img-thumbnail p-0 border-0">
+      <p>Room number: {{room.room}}</p>
+      <p>No. of beds: {{room.nobeds}}</p>
+      <p class="font-weight-bold">${{room.price}}</p>
+      <a href="/rooms/{{room.room}}">See detail</a>
+    </div>
   </div>
 </div>

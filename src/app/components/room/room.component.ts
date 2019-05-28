@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RoomService } from '../../services/room.service';
 import { ReservationService} from '../../services/reservation.service';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { ReviewService } from 'src/app/services/review.service';
 
 @Component({
   selector: 'app-room',
@@ -9,15 +10,15 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent implements OnInit {
-  id = '';
-  room = [];
+  id = ''; room = []; reviews = [];
         
-  constructor(private roomService: RoomService, private reservationService: ReservationService, private route: ActivatedRoute, private router: Router) {
+  constructor(private reviewService: ReviewService, private roomService: RoomService, private reservationService: ReservationService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get("id")
+    this.id = this.route.snapshot.paramMap.get("id");
     this.getRoom(this.id);
+    this.getReviews(this.id);
   }
 
   getRoom(id): void {
@@ -25,7 +26,18 @@ export class RoomComponent implements OnInit {
     this.roomService.getRoom(id).subscribe(
       (res: any[]) => {
         this.room = res['data'];
-        console.log(this.room);
+      },
+      (err) => {
+        console.error(err);
+      }
+    );
+  }
+
+  getReviews(id): void {
+    this.reviewService.getReviewsPer(id).subscribe(
+      (res: any[]) => {
+        console.log(res);
+        this.reviews = res['data'];
       },
       (err) => {
         console.error(err);
@@ -36,15 +48,18 @@ export class RoomComponent implements OnInit {
   reserve(event): void {
     event.preventDefault(); 
     const target = event.target;
-    const date = target.querySelector('#check-in').value;
+    const checkin = target.querySelector('#checkin').value;
+    const checkout = target.querySelector('#checkout').value;
     const fname = target.querySelector('#fname').value;
     const lname = target.querySelector('#lname').value;
-    const phonenum = target.querySelector('#phonenum').value;
+    const phone = target.querySelector('#phone').value;
     const param = {
-      date: date,
+      checkin: checkin,
+      checkout: checkout,
       fname: fname,
       lname: lname,
-      phonenum: phonenum
+      phone: phone,
+      room: this.id
     }
     this.reservationService.makeReservation(param).subscribe(data => {
       const ne: NavigationExtras = {
@@ -52,7 +67,7 @@ export class RoomComponent implements OnInit {
           data: data
         }
       };
-      console.log(data)
+      console.log(data);
       this.router.navigate(['confirmation'], ne);
     });
   }

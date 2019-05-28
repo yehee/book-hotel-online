@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Room } from './room';
-
-interface myData {
-  success: boolean,
-  message: string
-}
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
-  baseUrl = 'http://localhost/hotel';
-  rooms: Room[];
+  baseUrl = 'http://localhost/home/api';
 
   constructor(private http: HttpClient) {}
 
   getAvailableRooms(date) {
-    return this.http.post<myData>(`${this.baseUrl}/rooms`, { date })
+    return this.http.post<any[]>(`${this.baseUrl}/available-rooms`, { date });
+  }
+
+  getPopularRooms() {
+    return this.http.get<any[]>(`${this.baseUrl}/popular-rooms`);
   }
 }

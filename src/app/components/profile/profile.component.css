@@ -1,0 +1,10 @@
+h2 {
+    width: 100%;
+    padding-top: 20px;
+}
+li {
+    width: 200px;
+}
+.w-25.h-25 p {
+    margin:0;
+}

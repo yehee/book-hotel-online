@@ -9,6 +9,21 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { AvailableComponent } from './components/available/available.component';
 import { RoomComponent } from './components/room/room.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { FormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { PopularComponent } from './components/popular/popular.component';
+import { AnalyticsComponent } from './components/analytics/analytics.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -18,22 +33,52 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
     PagenotfoundComponent,
     AvailableComponent,
     RoomComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    NavbarComponent,
+    FooterComponent,
+    ProfileComponent,
+    CalendarComponent,
+    PopularComponent,
+    AnalyticsComponent
   ],
   imports: [
     BrowserModule,
+    ChartModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
+    FormsModule,
     RouterModule.forRoot([
       {
         path: '',
         component: HomeComponent
       },
       {
+        path: 'popular',
+        component: PopularComponent
+      },
+      {
+        path: 'analytics',
+        component: AnalyticsComponent
+      },
+      {
         path: 'rooms',
         component: RoomsComponent
       },
       {
-        path: 'available/:id',
+        path: 'user',
+        component: ProfileComponent
+      },
+      {
+        path: 'rooms/:id',
         component: RoomComponent
       },
       {

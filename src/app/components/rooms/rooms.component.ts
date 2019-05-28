@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { RoomsService } from '../../services/rooms.service';
-import { Room } from '../../services/room';
 import { Router, NavigationExtras } from '@angular/router';
+import { RoomsService } from '../../services/rooms.service';
 
-
+interface Date {
+  checkin: string,
+  checkout: string,
+  size: number
+}
 
 @Component({
   selector: 'app-rooms',
@@ -12,30 +15,28 @@ import { Router, NavigationExtras } from '@angular/router';
 })
 
 export class RoomsComponent implements OnInit {
-  baseUrl = 'http://localhost/hotel';
-  rooms: Room[];
-  error = '';
-  success = '';
-        
-  constructor(private roomsService: RoomsService, private router: Router) {
-  }
+  rooms = [];
 
-  ngOnInit(): void {
-  }
+  constructor(private roomsService: RoomsService, private router: Router) {}
+
+  ngOnInit(): void {}
 
   getRooms(event): void {
     event.preventDefault(); 
     const target = event.target;
-    const date = target.querySelector('#check-in').value;
+    const checkin = target.querySelector('#checkin').value;
+    const checkout = target.querySelector('#checkout').value;
+    const size = target.querySelector('#size').value;
+    const date: Date = {
+      checkin: checkin,
+      checkout: checkout,
+      size: size
+    }
     this.roomsService.getAvailableRooms(date).subscribe(data => {
-      const ne: NavigationExtras = {
-        state: {
-          rooms: data
-        }
+      const extras: NavigationExtras = {
+        state: data
       };
-      this.router.navigate(['available'], ne);
+      this.router.navigate(['available'], extras);
     });
-
-    console.log(date);
   }
 }
