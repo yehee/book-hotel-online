@@ -18,7 +18,7 @@ export class ProfileService {
   }
 
   getProfile(params) {
-    return this.http.post<any[]>(`${this.baseUrl}/profile`, { params });
+    return this.http.post<any[]>(`${this.baseUrl}/profile/get`, { params });
   }
 
   getReservation(params) {
@@ -27,5 +27,9 @@ export class ProfileService {
 
   getPaymentHistory(params) {
     return this.http.post<any[]>(`${this.baseUrl}/payment-history`, { params });
+  }
+
+  updateProfile(params) {
+    return this.http.post<any[]>(`${this.baseUrl}/profile/update`, { params });
   }
 }
